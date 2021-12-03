@@ -1,0 +1,8 @@
+.MuiToolbar-regular {
+  position: static;
+  background-color: purple;
+}
+
+.title {
+  flex-grow: 1;
+}
