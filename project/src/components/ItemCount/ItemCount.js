@@ -4,7 +4,6 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 export default function ItemCount({ counter, setCounter }) {
   const stock = 10;
-  // let [counter, setCounter] = useState(0);
 
   const increment = () => {
     setCounter(counter + 1);
