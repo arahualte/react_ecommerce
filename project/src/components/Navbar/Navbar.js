@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,7 +11,8 @@ import {
 import { CartWidget } from "../CartWidget/CartWidget";
 import { makeStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import { CartContext } from "../Context/CartContext";
+import "./Navbar.css";
 
 const useStyles = makeStyles(() => ({
   typographyStyles: {
@@ -19,12 +20,19 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Header = () => {
+const Navbar = () => {
   const classes = useStyles();
+  const [cartAmount, setCartAmount] = useState(0);
+  const { totalItemsOnCart } = useContext(CartContext);
   const pages = [
     { component: "Home", url: "/" },
     { component: "Products", url: "/products" },
   ];
+
+  useEffect(() => {
+    setCartAmount(totalItemsOnCart);
+  }, [totalItemsOnCart]);
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -47,7 +55,7 @@ const Header = () => {
           ))}
         </Box>
         <IconButton>
-          <Badge badgeContent={9} color="secondary">
+          <Badge badgeContent={cartAmount} color="secondary">
             <CartWidget />
           </Badge>
         </IconButton>
@@ -56,4 +64,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

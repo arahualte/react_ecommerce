@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import {
   IconButton,
@@ -16,9 +16,10 @@ import { CartContext } from "../Context/CartContext";
 const Item = (props) => {
   const { id, title, description, price, imgUrl } = props;
   const { addProductToCart } = useContext(CartContext);
+  let [counter, setCounter] = useState(0);
 
   const handleAdd = () => {
-    addProductToCart(props);
+    addProductToCart({ props, amount: counter });
   };
 
   return (
@@ -35,7 +36,7 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <ItemCount />
+        <ItemCount counter={counter} setCounter={setCounter} />
         <Button variant="contained" size="medium" onClick={handleAdd}>
           Agregar al Carrito
         </Button>

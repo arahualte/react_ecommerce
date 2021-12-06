@@ -1,6 +1,6 @@
 import "./App.css";
 import { Grid } from "@material-ui/core";
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { ItemListContainer } from "./components/Item/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <Grid container direction="column">
-          <Header />
+          <Navbar />
           <Routes>
             <Route exact path="/products" element={<ItemListContainer />} />
             <Route exact path="/products/:title/:id" element={<ItemDetail />} />
