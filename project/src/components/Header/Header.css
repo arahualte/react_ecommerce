@@ -6,3 +6,13 @@
 .title {
   flex-grow: 1;
 }
+
+.btn-nav .MuiButton-label {
+  color: white;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+}

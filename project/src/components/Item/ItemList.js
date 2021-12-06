@@ -7,6 +7,8 @@ export const ItemList = ({ ItemList }) => {
       {ItemList.map((product) => {
         return (
           <Item
+            key={product.id}
+            id={product.id}
             title={product.title}
             description={product.description}
             price={product.price}
@@ -17,6 +19,3 @@ export const ItemList = ({ ItemList }) => {
     </div>
   );
 };
-
-// useeffect --> vacio = render 1 vez
-// id = render + de una 1 vez

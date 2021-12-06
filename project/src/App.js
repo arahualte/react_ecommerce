@@ -3,24 +3,25 @@ import { Grid } from "@material-ui/core";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { ItemListContainer } from "./components/Item/ItemListContainer";
-
-// import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ItemDetail } from "./components/Item/ItemDetail";
+import { CartProvider } from "./components/Context/CartContext";
 
 function App() {
   return (
-    <Grid container direction="column">
-      <Grid item>
-        <Header />
-      </Grid>
-      <Grid item container>
-        <Grid item xs={false} sm={2} />
-        <Grid item xs={12} sm={8}>
-          <ItemListContainer />
+    <BrowserRouter>
+      <CartProvider>
+        <Grid container direction="column">
+          <Header />
+          <Routes>
+            <Route exact path="/products" element={<ItemListContainer />} />
+            <Route exact path="/products/:title/:id" element={<ItemDetail />} />
+          </Routes>
+
+          <Footer />
         </Grid>
-        <Grid item xs={false} sm={2} />
-      </Grid>
-      <Footer />
-    </Grid>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 
