@@ -10,8 +10,8 @@ import {
   Card,
 } from "@material-ui/core";
 import ItemCount from "../ItemCount/ItemCount";
-import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const Item = (props) => {
   const { id, title, description, price, imgUrl } = props;

@@ -5,9 +5,6 @@ import { useNavigate } from "react-router";
 
 export const ItemDetail = () => {
   const { id, title } = useParams();
-
-  // Lógica para mostrar el detalle (Busqueda y renderizado)
-
   const navigate = useNavigate();
 
   const Back = () => {

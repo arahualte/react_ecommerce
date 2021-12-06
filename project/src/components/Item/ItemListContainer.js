@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Grid } from "@material-ui/core";
 import { db } from "../Firebase/config";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { ItemList } from "./ItemList";
-import { Grid } from "@material-ui/core";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);

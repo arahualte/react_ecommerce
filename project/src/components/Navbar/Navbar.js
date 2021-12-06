@@ -27,6 +27,7 @@ const Navbar = () => {
   const pages = [
     { component: "Home", url: "/" },
     { component: "Products", url: "/products" },
+    { component: "carry", url: "/carry" },
   ];
 
   useEffect(() => {
