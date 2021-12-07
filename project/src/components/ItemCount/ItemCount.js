@@ -11,6 +11,7 @@ export default function ItemCount({ counter, setCounter }) {
   const decrement = () => {
     setCounter(counter - 1);
   };
+
   return (
     <div>
       <h2> Cant: {counter} </h2>
