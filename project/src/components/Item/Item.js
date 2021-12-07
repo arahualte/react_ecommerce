@@ -12,6 +12,7 @@ import {
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../Context/CartContext";
 import { Link } from "react-router-dom";
+import "./Item.css";
 
 const Item = (props) => {
   const { id, title, description, price, imgUrl } = props;
@@ -35,12 +36,12 @@ const Item = (props) => {
           ${price} ARS
         </Typography>
       </CardContent>
+      <ItemCount counter={counter} setCounter={setCounter} />
       <CardActions>
-        <ItemCount counter={counter} setCounter={setCounter} />
-        <Button variant="contained" size="medium" onClick={handleAdd}>
+        <Button variant="contained" className="btn-main" onClick={handleAdd}>
           Agregar al Carrito
         </Button>
-        <Button variant="contained" size="medium">
+        <Button variant="contained" className="btn-detail">
           <Link to={`/products/${title}/${id}`}>Ver Mas</Link>
         </Button>
       </CardActions>

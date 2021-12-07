@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -21,14 +22,18 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
   const [cartAmount, setCartAmount] = useState(0);
   const { totalItemsOnCart } = useContext(CartContext);
   const pages = [
     { component: "Home", url: "/" },
     { component: "Products", url: "/products" },
-    { component: "carry", url: "/carry" },
   ];
+
+  const handleGoToCart = () => {
+    navigate("/cart");
+  };
 
   useEffect(() => {
     setCartAmount(totalItemsOnCart);
@@ -55,7 +60,7 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
-        <IconButton>
+        <IconButton onClick={handleGoToCart}>
           <Badge badgeContent={cartAmount} color="secondary">
             <CartWidget />
           </Badge>

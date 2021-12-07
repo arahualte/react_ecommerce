@@ -13,9 +13,9 @@ export const ItemDetail = () => {
 
   return (
     <div>
-      <p>Hola soy el detalle</p>
+      <h1>{title}</h1>
+      <p>short description</p>
       <p>{id}</p>
-      <p>{title}</p>
       <Button variant="contained" size="medium" onClick={Back}>
         Volver
       </Button>

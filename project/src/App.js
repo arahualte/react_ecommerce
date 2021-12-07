@@ -6,6 +6,8 @@ import { ItemListContainer } from "./components/Item/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ItemDetail } from "./components/Item/ItemDetail";
 import { CartProvider } from "./components/Context/CartContext";
+import { Cart } from "./components/Cart/Cart";
+import { Home } from "./components/Home/Home";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <Grid container direction="column">
           <Navbar />
           <Routes>
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/products" element={<ItemListContainer />} />
             <Route exact path="/products/:title/:id" element={<ItemDetail />} />
+            <Route exact path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
         </Grid>

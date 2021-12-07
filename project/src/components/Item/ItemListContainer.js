@@ -19,6 +19,7 @@ export const ItemListContainer = () => {
 
   return (
     <Grid container direction="column">
+      <h1>Productos</h1>
       <Grid item xs={false} sm={2} />
       <Grid item xs={12} sm={8}>
         <ItemList ItemList={products} />
