@@ -8,6 +8,7 @@ export const Home = () => {
   const handleView = () => {
     navigate("/products");
   };
+
   return (
     <div className="content">
       <h1>Bienvenidos!</h1>

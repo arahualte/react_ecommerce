@@ -23,6 +23,7 @@ export const Cart = () => {
   const totalsPerProduct = cartProducts.map(
     (cartItem) => cartItem.cant * cartItem.item.price
   );
+
   if (totalsPerProduct.length > 0) {
     total = totalsPerProduct.reduce((acc, curr) => acc + curr);
   }
