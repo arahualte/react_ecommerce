@@ -24,7 +24,7 @@ const Item = (props) => {
   };
 
   return (
-    <Card>
+    <Card style={{ margin: "20px" }}>
       <CardHeader
         action={<IconButton aria-label="settings"></IconButton>}
         title={title}
@@ -36,13 +36,15 @@ const Item = (props) => {
           ${price} ARS
         </Typography>
       </CardContent>
-      <ItemCount counter={counter} setCounter={setCounter} />
-      <CardActions>
-        <Button variant="contained" className="btn-main" onClick={handleAdd}>
+      <CardContent>
+        <ItemCount counter={counter} setCounter={setCounter} />
+      </CardContent>
+      <CardActions style={{ margin: "15px" }}>
+        <Button variant="contained" onClick={handleAdd}>
           Agregar al Carrito
         </Button>
         <Button variant="contained" className="btn-detail">
-          <Link to={`/products/${title}/${id}`}>Ver Mas</Link>
+          <Link to={`/products/${title}/${id}/${description}`}>Ver Mas</Link>
         </Button>
       </CardActions>
     </Card>

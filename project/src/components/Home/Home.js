@@ -1,13 +1,23 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { useNavigate } from "react-router";
+import "./Home.css";
 
 export const Home = () => {
+  const navigate = useNavigate();
+  const handleView = () => {
+    navigate("/products");
+  };
   return (
-    <Grid container direction="column">
-      <Grid item xs={false} sm={2} />
-      <Grid item xs={12} sm={8}>
-        <h1>Bienvenidos!</h1>
-      </Grid>
-    </Grid>
+    <div className="content">
+      <h1>Bienvenidos!</h1>
+      <p>
+        Bienvenidos a la tienda comercial. Presione el siguiente boton para
+        poder navegar y visualizar nuestros productos disponibles
+      </p>
+      <Button variant="contained" color="primary" onClick={handleView}>
+        Ver Productos
+      </Button>
+    </div>
   );
 };

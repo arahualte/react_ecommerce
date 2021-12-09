@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core";
 import { db } from "../Firebase/config";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { ItemList } from "./ItemList";
+import "./Item.css";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -18,12 +19,10 @@ export const ItemListContainer = () => {
   }, []);
 
   return (
-    <Grid container direction="column">
+    <div className="content">
       <h1>Productos</h1>
-      <Grid item xs={false} sm={2} />
-      <Grid item xs={12} sm={8}>
-        <ItemList ItemList={products} />
-      </Grid>
-    </Grid>
+      <Grid item xs={2} sm={4} md={4} />
+      <ItemList ItemList={products} />
+    </div>
   );
 };

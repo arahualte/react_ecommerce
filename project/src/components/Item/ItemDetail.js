@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { useNavigate } from "react-router";
 
 export const ItemDetail = () => {
-  const { id, title } = useParams();
+  const { id, title, description } = useParams();
   const navigate = useNavigate();
 
   const Back = () => {
@@ -14,7 +14,7 @@ export const ItemDetail = () => {
   return (
     <div>
       <h1>{title}</h1>
-      <p>short description</p>
+      <p>{description}</p>
       <p>{id}</p>
       <Button variant="contained" size="medium" onClick={Back}>
         Volver

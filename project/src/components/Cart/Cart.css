@@ -1,0 +1,9 @@
+p {
+  margin: 25px;
+  display: flex;
+}
+
+.MuiButton-containedPrimary {
+  margin: 20px;
+  padding-bottom: 10px;
+}

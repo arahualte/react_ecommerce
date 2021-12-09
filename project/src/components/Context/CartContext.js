@@ -9,7 +9,19 @@ export const CartProvider = ({ children }) => {
   };
 
   const addProductToCart = (cartProduct) => {
-    return setCart([...cart, cartProduct]);
+    setCart([...cart, cartProduct]);
+    // let hashMap = {};
+    // cart.forEach((item) => {
+    //   if (hashMap[item.props.id]) {
+    //     hashMap[item.props.id].cant += item.amount;
+    //   } else {
+    //     hashMap[item.props.id] = { item: item.props, cant: item.amount };
+    //   }
+    // });
+
+    // const cartProducts = Object.values(hashMap);
+    // setCartProducts(cartProducts);
+    // return setCart([...cart, cartProduct]);
   };
 
   const removeProductFromCart = (product) => {

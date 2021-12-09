@@ -1,11 +1,14 @@
 import { Button } from "@material-ui/core";
 import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
+import { useNavigate } from "react-router";
+import "./Cart.css";
 
 export const Cart = () => {
   let total = 0;
-  const { cart } = useContext(CartContext);
+  const { cart, cleanCart } = useContext(CartContext);
   let hashMap = {};
+  const navigate = useNavigate();
 
   cart.forEach((item) => {
     if (hashMap[item.props.id]) {
@@ -16,29 +19,49 @@ export const Cart = () => {
   });
 
   const cartProducts = Object.values(hashMap);
+
   const totalsPerProduct = cartProducts.map(
     (cartItem) => cartItem.cant * cartItem.item.price
   );
   if (totalsPerProduct.length > 0) {
     total = totalsPerProduct.reduce((acc, curr) => acc + curr);
   }
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
+
+  const handleClean = () => {
+    cleanCart();
+  };
 
   return (
     <div>
       {cartProducts.map((cartItem) => (
         <div key={cartItem.item.id}>
-          <p>TITLE : {cartItem.item.title}</p>
-          <p>DESCRIPTION : {cartItem.item.description}</p>
-          <p>PRICE : {cartItem.item.price}</p>
-          <p>AMOUNT : {cartItem.cant}</p>
+          <p>Articulo : {cartItem.item.title}</p>
+          <p>Descripción : {cartItem.item.description}</p>
+          <p>Precio : {cartItem.item.price}</p>
+          <p>Cantidad : {cartItem.cant}</p>
           <hr />
         </div>
       ))}
-      <p>TOTAL: $ {total}</p>
-      <Button variant="contained" color="secondary">
+      <p>
+        <b>TOTAL: $ {total}</b>
+      </p>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={handleClean}
+        style={{ margin: "10px" }}
+      >
         Limpiar Carrito
       </Button>
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleCheckout}
+        style={{ margin: "10px" }}
+      >
         Confirmar Carrito
       </Button>
     </div>
