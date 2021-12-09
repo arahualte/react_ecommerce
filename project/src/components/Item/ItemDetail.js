@@ -7,16 +7,21 @@ export const ItemDetail = () => {
   const { id, title, description } = useParams();
   const navigate = useNavigate();
 
-  const Back = () => {
+  const handleBack = () => {
     navigate(-1);
   };
 
   return (
-    <div>
+    <div className="content">
       <h1>{title}</h1>
       <p>{description}</p>
       <p>{id}</p>
-      <Button variant="contained" size="medium" onClick={Back}>
+      <Button
+        variant="contained"
+        size="medium"
+        color="primary"
+        onClick={handleBack}
+      >
         Volver
       </Button>
     </div>
