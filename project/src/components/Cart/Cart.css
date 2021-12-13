@@ -7,3 +7,7 @@ p {
   margin: 20px;
   padding-bottom: 10px;
 }
+
+.cart-content {
+  min-height: calc(100vh - 64px);
+}
