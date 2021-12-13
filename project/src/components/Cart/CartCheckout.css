@@ -1,0 +1,9 @@
+.MuiGrid-root.MuiGrid-container.MuiGrid-direction-xs-column {
+  min-height: calc(100vh - 64px);
+}
+
+.MuiBox-root-5 {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}

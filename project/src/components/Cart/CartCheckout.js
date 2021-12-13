@@ -12,6 +12,7 @@ import {
 import { Timestamp, collection, addDoc } from "firebase/firestore/lite";
 import { db } from "../Firebase/config";
 import { CartContext } from "../Context/CartContext";
+import "./CartCheckout.css";
 
 export const CartCheckout = () => {
   const [name, setName] = useState("");
@@ -112,7 +113,7 @@ export const CartCheckout = () => {
           }}
         />
       </FormControl>
-      <Box sx={{ display: "flex", alignItems: "center", margin: "10px" }}>
+      <Box sx>
         <Button
           variant="contained"
           disabled={loading}
