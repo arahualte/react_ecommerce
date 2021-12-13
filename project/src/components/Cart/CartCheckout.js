@@ -68,7 +68,7 @@ export const CartCheckout = () => {
   useEffect(() => {
     if (orderId) {
       alert(`Order completed. Your order ID is: ${orderId}`);
-      // navigate("/products");
+      navigate("/products");
     }
   }, [orderId, navigate]);
 
